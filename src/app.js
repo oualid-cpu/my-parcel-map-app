@@ -1,7 +1,7 @@
 import Leaflet from 'leaflet';          // import everything from Leaflet
 import 'leaflet/dist/leaflet.css';      // import Leaflet's CSS
 
-const WBS = [52.457131, 13.54007];     // Coordinates for WBS Coding School
+const WBS = [51.2277, 6.7735]; // Düsseldorf center
 
 // Create the map centered on WBS
 const map = Leaflet.map('map').setView(WBS, 13);
@@ -13,7 +13,7 @@ const markerIcon = Leaflet.icon({
 });
 
 // Add one marker at WBS
-Leaflet.marker(WBS, { icon: markerIcon }).addTo(map);
+// Leaflet.marker(WBS, { icon: markerIcon }).addTo(map);
 
 // Add the OpenStreetMap tile layer (background map)
 Leaflet.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -23,27 +23,29 @@ Leaflet.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 
 const myLocations = [
+  // existing locations...
   {
-    name: 'WBS CODING SCHOOL',
-    location: [52.457131, 13.54007],
-    description: 'The best coding school in the world'
+    name: 'Café Hüftgold',
+    location: [51.2261, 6.7795],
+    description: 'Cozy café with brunch and cake'
   },
   {
-    name: 'Alexanderplatz',
-    location: [52.521918, 13.413215],
-    description: 'The most famous square in Berlin'
+    name: 'Röststätte Düsseldorf',
+    location: [51.2250, 6.7844],
+    description: 'Specialty coffee roastery café'
   },
   {
-    name: 'Brandenburg Gate',
-    location: [52.516275, 13.377704],
-    description: 'The most famous gate in Berlin'
+    name: 'Seven Swans',
+    location: [51.2316, 6.7780],
+    description: 'Scenic café in the old town area'
   },
   {
-    name: 'Berlin Wall',
-    location: [52.507541, 13.39032],
-    description: 'The most famous wall in Berlin'
+    name: 'Café Knuth',
+    location: [51.2258, 6.7834],
+    description: 'Local favorite for breakfast & pastries'
   }
 ];
+
 
 // Add markers for each location
 myLocations.forEach(location => {
